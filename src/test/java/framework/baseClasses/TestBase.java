@@ -23,27 +23,36 @@ public class TestBase {
 	protected IConfiguration configuration;
 	
 	public TestBase() {
+		// Load configurations
 		configuration = new Configuration();
 	}
 	
+	// Setup Web driver
 	public void setup(Scenario scenario)
 	{
+		// Create browser instance based on configurations
 		Browser browser = getBrowser();
+		// Create web driver
 		driver = browser.getDriver();
+		// Open browser and load the landing page
 		driver.get(configuration.get("testHost"));
 	}
 	
+	// Dispose Web Driver
 	public void teardown(Scenario scenario)
 	{
 		if(driver != null) {
+			// In case of failed test, take screenshot
 			if(scenario.isFailed()){
 	           saveScreenshotsForScenario(scenario);
 	        }
 			
+			// Quit the driver
 			driver.quit();
 		}
 	}
 	
+	// Wait until the web element is visible
 	public void waitUntilElementLocated(WebElement element) {
 		int pageTimeOutInSeconds = Integer.parseInt(configuration.get("pageTimeOutInSeconds"));
 		WebDriverWait wait = new WebDriverWait(driver, pageTimeOutInSeconds);
@@ -63,10 +72,12 @@ public class TestBase {
 		};
 	}
 	
+	// Get Browser from configurations
 	private Browser getBrowser() {
 		return BrowserHelper.getBrowser(configuration.get("browser"));
 	}
 	
+	// Save screenshot
 	private void saveScreenshotsForScenario(final Scenario scenario) {
         final byte[] screenshot = ((TakesScreenshot) driver)
                 .getScreenshotAs(OutputType.BYTES);

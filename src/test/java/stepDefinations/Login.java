@@ -23,32 +23,41 @@ public class Login extends TestBase {
 	@Before
 	public void beforeTest(Scenario scenario)
 	{
+		// Setup Web driver
 		setup(scenario);
 	}
 	
 	@After
 	public void afterTest(Scenario scenario)
 	{
+		// Dispose Web Driver
 		teardown(scenario);
 	}
 	
 	@Given("^User is on landing page$")
 	public void user_is_on_landing_page() throws Exception {
+		// Create Login POM (Page Object Model)
 		loginPage = new LoginPage(driver);
+		// Wait until the page loaded and username textbox is visible
 		waitUntilElementLocated(loginPage.usernameBox);
 	}
 
 	@When("^User is logging in with valid username and password$")
 	public void user_is_logging_in_with_valid_username_and_password() throws Exception {
+		// Retrieve username and password from configurations (properties file)
 		String username = configuration.get("username");
 		String password = configuration.get("password");
 		
+		// Invoke login which can navigate to dashboard page
+		// on successful login
 		dashboardPage = loginPage.login(username, password);
+		// Wait until the dashboard page loaded and logout button is visible
 		waitUntilElementLocated(dashboardPage.logoutButton);
 	}
 
 	@Then("^User can able to login$")
 	public void user_can_able_to_login() throws Exception {
+		// Assert true if dashboard page is loaded and logout button is visible
 	    Assert.assertTrue(dashboardPage.logoutButton.isDisplayed());
 	}
 	

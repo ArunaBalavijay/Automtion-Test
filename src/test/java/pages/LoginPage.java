@@ -21,6 +21,7 @@ public class LoginPage extends PageBase {
 	@FindBy(className = "login-button")
 	public WebElement loginButton;
 	
+	// Invoke login
 	public DashboardPage login(String username, String password) {
 		usernameBox.sendKeys(username);
 		passwordBox.sendKeys(password);
