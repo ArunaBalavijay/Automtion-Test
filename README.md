@@ -43,6 +43,8 @@ Framework Architecture
 		|	|_browsers
 		|	|	|_Browser.java
 		|	|	|_ChromeBrowser.java
+		|	|	|_FirefoxBrowser.java
+		|	|	|_IEBrowser.java
 		|	|_interfaces
 		|	|	|_IBrowser.java
 		|	|	|_IConfiguration.java
@@ -53,6 +55,7 @@ Framework Architecture
 		|	|_drivers
 		|	|	|_chromedriver.exe
 		|	|	|_geckodriver.exe
+		|	|	|_IEDriverServer.exe
 		|	|_properties
 		|	|	|_development.properties
 		|	|	|_global.properties
