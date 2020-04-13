@@ -52,6 +52,7 @@ Framework Architecture
 		|_src/test/java/resources
 		|	|_drivers
 		|	|	|_chromedriver.exe
+		|	|	|_geckodriver.exe
 		|	|_properties
 		|	|	|_development.properties
 		|	|	|_global.properties
