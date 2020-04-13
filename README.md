@@ -2,7 +2,7 @@
 
 ### Challenge
 
-Write a BDD framework to automate the Test cases in _Test-site_
+Write a BDD framework to automate the Test cases in _Test-site_.
 
 ### Framework
 
