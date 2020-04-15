@@ -8,8 +8,10 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(
 		features = "src/test/java/features",
-		glue = "stepDefinations", dryRun = false,
-		plugin = { "pretty", "json:target/cucumber.json" }
+		glue = "stepDefinations", tags = {"@UnitTest"},
+		dryRun = false,
+		plugin = { "pretty", "html:target/cucumber",
+					"json:target/cucumber.json" }
 )
 public class TestRunner {
 

@@ -70,7 +70,7 @@ Framework Architecture
 
 ### To change the Environment and it's configurations
 
-- Under `src/test/java/resources/properties`, modify the environment file `<environment>.properties` in case of any configurations changes.
+- Under `src/test/java/resources/properties`, modify the environment file `<environment>.properties` in case of any modifications required.
 - Then, modify the `global.properties` file as below to switch to the respective environment.
 
 ```java

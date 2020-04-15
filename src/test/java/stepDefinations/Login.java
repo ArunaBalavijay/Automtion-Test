@@ -20,14 +20,14 @@ public class Login extends TestBase {
 		super();
 	}
 	
-	@Before
+	@Before("@RegressionTest")
 	public void beforeTest(Scenario scenario)
 	{
 		// Setup Web driver
 		setup(scenario);
 	}
 	
-	@After
+	@After("@RegressionTest")
 	public void afterTest(Scenario scenario)
 	{
 		// Dispose Web Driver
@@ -49,7 +49,7 @@ public class Login extends TestBase {
 		String password = configuration.get("password");
 		
 		// Invoke login which can navigate to dashboard page
-		// on successful login
+		// upon successful login
 		dashboardPage = loginPage.login(username, password);
 		// Wait until the dashboard page loaded and logout button is visible
 		waitUntilElementLocated(dashboardPage.logoutButton);
