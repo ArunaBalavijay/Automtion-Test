@@ -1,0 +1,79 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 14,
+        "name": "Simple Login Test",
+        "description": "",
+        "id": "simple-login;simple-login-test",
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 7538769600,
+              "status": "passed"
+            },
+            "line": 15,
+            "name": "User is on landing page \"https://admin-demo.nopcommerce.com/login\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "https://admin-demo.nopcommerce.com/login",
+                  "offset": 25
+                }
+              ],
+              "location": "SimpleLogin.user_is_on_landing_page(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 4556419900,
+              "status": "passed"
+            },
+            "line": 16,
+            "name": "User is logging in with valid username \"admin@yourstore.com\" and password \"admin\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "admin@yourstore.com",
+                  "offset": 40
+                },
+                {
+                  "val": "admin",
+                  "offset": 75
+                }
+              ],
+              "location": "SimpleLogin.user_is_logging_in_with_valid_username_and_password(String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 725768100,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "User can able to login and view dashboard page",
+            "match": {
+              "location": "SimpleLogin.user_can_able_to_login_and_view_dashboard_page()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@UnitTest"
+          }
+        ]
+      }
+    ],
+    "name": "Simple Login",
+    "description": "",
+    "id": "simple-login",
+    "keyword": "Feature",
+    "uri": "src/test/java/features/SimpleLogin.feature"
+  }
+]
