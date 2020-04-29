@@ -8,7 +8,7 @@ Feature: Application Login
 		
 #		Examples:
 #		| website | username | password |
-#		| http://www.facebook.com/ | aruna.balavijay@gmail.con | Adhi$h310 |
+#		| http://www.facebook.com/ | test@gmail.con | test |
 
 @RegressionTest
 Scenario: Login Test
